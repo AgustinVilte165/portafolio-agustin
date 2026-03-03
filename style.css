@@ -401,3 +401,51 @@ section {
     grid-template-columns: 1fr;
   }
 }
+/* ============================================= */
+/* ABOUT SIMPLE INFO */
+/* ============================================= */
+
+.about-simple-info {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 15px;
+  color: #cbd5e1;
+}
+
+/* ============================================= */
+/* CONTACT CLEAN */
+/* ============================================= */
+
+.contact-clean {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr-code {
+  width: 220px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(147,51,234,0.5);
+  transition: 0.3s;
+}
+
+.qr-code:hover {
+  transform: scale(1.05);
+}
