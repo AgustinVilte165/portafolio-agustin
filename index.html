@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="description" content="Agustín Vilte - Fullstack Developer especializado en Node.js y MongoDB.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agustín Vilte | Fullstack Developer</title>
 
-  <!-- FAVICON -->
+  <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="assets/icono.jpg">
-  <link rel="shortcut icon" href="assets/icono.jpg" type="image/jpeg">
 
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
   <script src="https://kit.fontawesome.com/4ad0d2c2c3.js" crossorigin="anonymous"></script>
 
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Script -->
   <script src="script.js" defer></script>
 </head>
+
+<body>
+
 <!-- ================= NAVBAR ================= -->
 
-<nav class="navbar" id="menu">
+<nav class="navbar">
   <div class="nav-logo">
     <a href="#hero">
       <span class="logo-main">Agustín</span>
@@ -30,7 +39,7 @@
     <li><a href="#about">Sobre mí</a></li>
     <li><a href="#tech">Tecnologías</a></li>
     <li><a href="#project">Proyectos</a></li>
-    <li><a href="#contact">Conectemos</a></li>
+    <li><a href="#contact">Contacto</a></li>
   </ul>
 
   <a href="assets/cv-agustin-vilte.pdf" download class="cv-btn">
@@ -42,26 +51,7 @@
 
 <header class="hero" id="hero">
 
-  <div class="wave-svg">
-    <svg viewBox="0 0 1200 400" preserveAspectRatio="none">
-      <defs>
-        <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#ff00cc"/>
-          <stop offset="50%" stop-color="#7c3aed"/>
-          <stop offset="100%" stop-color="#9333ea"/>
-        </linearGradient>
-      </defs>
-
-      <path class="wave-path" d="M0,200 C300,100 600,300 900,200 C1100,150 1200,250 1200,250" stroke="url(#waveGradient)" fill="none"/>
-      <path class="wave-path" d="M0,220 C300,120 600,320 900,220 C1100,170 1200,270 1200,270" stroke="url(#waveGradient)" fill="none"/>
-      <path class="wave-path" d="M0,240 C300,140 600,340 900,240 C1100,190 1200,290 1200,290" stroke="url(#waveGradient)" fill="none"/>
-      <path class="wave-path" d="M0,260 C300,160 600,360 900,260 C1100,210 1200,310 1200,310" stroke="url(#waveGradient)" fill="none"/>
-      <path class="wave-path" d="M0,280 C300,180 600,380 900,280 C1100,230 1200,330 1200,330" stroke="url(#waveGradient)" fill="none"/>
-    </svg>
-  </div>
-
   <div class="hero-content">
-   
     <img src="assets/foto-agustin.jpg" alt="Agustín Vilte" class="profile-img">
     <p class="hero-label">FULLSTACK DEVELOPER</p>
     <h1>Agustín Vilte</h1>
@@ -70,107 +60,66 @@
 
 </header>
 
-<!-- ================= SOBRE MI ================= -->
+<!-- ================= ABOUT ================= -->
 
 <section id="about" class="about-section">
 
-  <div class="about-container">
+  <div class="about-wrapper">
 
-    <!-- Imagen -->
     <div class="about-image">
       <img src="assets/fotosobremi.jpg" alt="Agustín Vilte">
     </div>
 
-    <!-- Texto -->
-    <div class="about-content">
-
-      <h2>Full-Stack Developer</h2>
+    <div class="about-text">
+      <span class="section-label">SOBRE MÍ</span>
+      <h2>Full-Stack Developer enfocado en backend y arquitectura</h2>
 
       <p>
-        Soy desarrollador Full-Stack especializado en backend con Node.js y MongoDB.
-        Me enfoco en crear sistemas reales, escalables y orientados a negocio.
+        Soy desarrollador Full-Stack especializado en Node.js y MongoDB.
+        Me enfoco en construir sistemas reales, seguros y escalables.
       </p>
 
       <p>
-        He desarrollado plataformas e-commerce, paneles administrativos,
-        automatizaciones empresariales y sistemas preparados para integración
-        con APIs externas como WhatsApp Business.
+        He desarrollado plataformas e-commerce, paneles administrativos
+        y sistemas automatizados preparados para integración con APIs externas.
       </p>
 
       <p>
-        Mi objetivo es construir soluciones limpias, seguras y eficientes,
-        aplicando buenas prácticas, arquitectura modular y optimización
-        de rendimiento.
+        Mi objetivo es crear soluciones profesionales orientadas a negocio,
+        aplicando buenas prácticas, arquitectura modular y seguridad en producción.
       </p>
-
-      <div class="about-info">
-
-        <div>
-          <strong>📍 Ubicación:</strong>
-          <span>Buenos Aires, Argentina</span>
-        </div>
-
-        <div>
-          <strong>📧 Email:</strong>
-          <span>agustin.nico252@gmail.com</span>
-        </div>
-
-      </div>
 
     </div>
 
   </div>
 
 </section>
-<!-- ================= TECNOLOGIAS ================= -->
+
+<!-- ================= TECH ================= -->
 
 <section id="tech" class="tech-section">
 
- <div class="tech-header">
-  <span class="tech-subtitle">TECNOLOGÍAS</span>
+  <span class="tech-big-label">TECNOLOGÍAS</span>
   <h2>Mis herramientas y tecnologías</h2>
-</div>
 
   <div class="tech-grid">
 
-    <div class="tech-card">
-      <i class="fab fa-node-js"></i>
-      <h3>Node.js</h3>
-    </div>
-
-    <div class="tech-card">
-      <i class="fas fa-server"></i>
-      <h3>Express</h3>
-    </div>
-
-    <div class="tech-card">
-      <i class="fas fa-shield-alt"></i>
-      <h3>JWT</h3>
-    </div>
-
-    <div class="tech-card">
-      <i class="fas fa-database"></i>
-      <h3>MongoDB</h3>
-    </div>
-
-    <div class="tech-card">
-      <i class="fab fa-js"></i>
-      <h3>JavaScript</h3>
-    </div>
-
-    <div class="tech-card">
-      <i class="fab fa-git-alt"></i>
-      <h3>Git</h3>
-    </div>
+    <div class="tech-card">Node.js</div>
+    <div class="tech-card">Express</div>
+    <div class="tech-card">JWT</div>
+    <div class="tech-card">MongoDB</div>
+    <div class="tech-card">JavaScript</div>
+    <div class="tech-card">Git</div>
 
   </div>
 
 </section>
 
-<!-- ================= PROYECTOS ================= -->
+<!-- ================= PROJECTS ================= -->
 
 <section id="project">
-  <h2>Proyectos</h2>
+
+  <h2 style="text-align:center; margin-bottom:60px;">Proyectos</h2>
 
   <div class="projects-grid">
 
@@ -178,21 +127,14 @@
     <div class="project-card">
 
       <div class="project-images">
-        <img src="assets/ecommerce.jpg">
-        <img src="assets/ecommerce1.jpg">
-        <img src="assets/ecommerce3.jpg">
-        <img src="assets/ecommerce4.jpg">
+        <img src="assets/ecommerce.jpg" alt="Ecommerce 1">
+        <img src="assets/ecommerce1.jpg" alt="Ecommerce 2">
+        <img src="assets/ecommerce3.jpg" alt="Ecommerce 3">
+        <img src="assets/ecommerce4.jpg" alt="Ecommerce 4">
       </div>
 
       <h3>Plataforma Ecommerce Fullstack</h3>
       <p>Sistema completo con autenticación, panel administrativo y control de compras en tiempo real.</p>
-
-      <div class="project-tech">
-        <span>Node.js</span>
-        <span>Express</span>
-        <span>MongoDB</span>
-        <span>Panel Admin</span>
-      </div>
 
       <a class="btn" href="https://distribuidora-ecommerce.onrender.com" target="_blank">
         Ver Proyecto
@@ -200,81 +142,64 @@
 
     </div>
 
-    <!-- Bot / Panel -->
+    <!-- Bot -->
     <div class="project-card">
 
       <div class="project-images">
-        <img src="assets/panel-turnos.jpg">
-        <img src="assets/panel-turnos1.jpg">
+        <img src="assets/panel-turnos.jpg" alt="Panel 1">
+        <img src="assets/panel-turnos1.jpg" alt="Panel 2">
       </div>
 
       <h3>Sistema Automatizado de Validación</h3>
       <p>Backend preparado para integración con WhatsApp Business API con validación y gestión de estados.</p>
 
-      <div class="project-tech">
-        <span>Node.js</span>
-        <span>Express</span>
-        <span>MongoDB</span>
-        <span>Automatización</span>
-      </div>
-
-      <a class="btn" href="#">
+      <a class="btn">
         Proyecto Privado
       </a>
 
     </div>
 
   </div>
+
 </section>
 
-<!-- ================= CONECTEMOS ================= -->
+<!-- ================= CONTACT ================= -->
 
-<section id="contact" class="contact-section">
+<section id="contact">
 
-  <h2>Conectemos</h2>
+  <h2 style="text-align:center; margin-bottom:60px;">Conectemos</h2>
 
   <div class="contact-grid">
 
-    <!-- IZQUIERDA -->
-
     <div class="contact-left">
 
-      <!-- WHATSAPP -->
       <a href="https://wa.me/5491132368577?text=Hola%20Agustin!%20Quiero%20contactarme%20con%20vos."
          target="_blank"
          class="contact-item">
         <i class="fab fa-whatsapp"></i>
-        <span>Contactame por WhatsApp</span>
+        <span>WhatsApp</span>
       </a>
 
-      <!-- GMAIL (solo visible) -->
       <div class="contact-item">
         <i class="fas fa-envelope"></i>
-        <span>Gmail</span>
-        <small class="contact-sub">
-          agustin.nico252@gmail.com
-        </small>
+        <span>agustin.nico252@gmail.com</span>
       </div>
 
-      <!-- GITHUB -->
       <a href="https://github.com/AgustinVilte165"
          target="_blank"
          class="contact-item">
         <i class="fab fa-github"></i>
-        <span>Ver mi GitHub</span>
+        <span>GitHub</span>
       </a>
 
-      <!-- LINKEDIN -->
       <a href="https://www.linkedin.com/in/agustin-vilte-04b89335a"
          target="_blank"
          class="contact-item">
         <i class="fab fa-linkedin"></i>
-        <span>Ver mi LinkedIn</span>
+        <span>LinkedIn</span>
       </a>
 
     </div>
-
-    <!-- DERECHA (QR FUNCIONAL) -->
 
     <div class="contact-right">
 
@@ -282,25 +207,22 @@
         Escaneame si querés contactarme
       </p>
 
-     <img 
-src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://wa.me/5491132368577?text=Hola%20Agustin!"
-class="qr-code">
+      <img 
+      src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://wa.me/5491132368577"
+      class="qr-code"
+      alt="QR WhatsApp">
 
     </div>
 
   </div>
 
 </section>
-<!-- ================= LIGHTBOX PRO ================= -->
+
+<!-- ================= MODAL ================= -->
 
 <div class="image-modal" id="imageModal">
   <span class="close-modal" id="closeModal">&times;</span>
-
-  <div class="modal-wrapper">
-    <button class="nav-arrow left" id="prevImage">&#10094;</button>
-    <img class="modal-content" id="modalImage">
-    <button class="nav-arrow right" id="nextImage">&#10095;</button>
-  </div>
+  <img class="modal-content" id="modalImage">
 </div>
 
 <footer>

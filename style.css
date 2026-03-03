@@ -127,61 +127,107 @@ body {
 }
 
 /* ================================================= */
-/* WAVE */
-/* ================================================= */
-
-.wave-svg {
-  position: absolute;
-  right: -10%;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 140%;
-  height: 500px;
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-/* ================================================= */
 /* SECTIONS */
 /* ================================================= */
 
 section {
-  padding: 110px 8%;
+  padding: 120px 8%;
 }
 
-section h2 {
-  font-size: 38px;
+/* ================================================= */
+/* ABOUT SECTION */
+/* ================================================= */
+
+.about-section {
+  padding: 140px 8%;
+}
+
+.about-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 25px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+}
+
+.about-text {
+  flex: 1.2;
+}
+
+.section-label {
+  color: #a78bfa;
+  letter-spacing: 3px;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.about-text h2 {
+  font-size: 42px;
+  margin-bottom: 25px;
+}
+
+.about-text p {
+  margin-bottom: 18px;
+  color: #cbd5e1;
+}
+
+/* ================================================= */
+/* TECH SECTION */
+/* ================================================= */
+
+.tech-section {
+  padding: 160px 8%;
   text-align: center;
-  margin-bottom: 45px;
-  font-weight: 600;
 }
 
-/* ================================================= */
-/* CARD */
-/* ================================================= */
+.tech-big-label {
+  display: block;
+  font-size: 18px;
+  letter-spacing: 4px;
+  color: #a78bfa;
+  margin-bottom: 20px;
+}
 
-.card {
+.tech-section h2 {
+  font-size: 58px;
+  font-weight: 700;
+  margin-bottom: 70px;
+}
+
+.tech-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+}
+
+.tech-card {
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
-  backdrop-filter: blur(18px);
-  padding: 40px;
-  border-radius: 20px;
-  max-width: 850px;
-  margin: auto;
+  padding: 60px 30px;
+  border-radius: 25px;
+  font-size: 22px;
+  font-weight: 600;
+  transition: 0.4s ease;
+  backdrop-filter: blur(15px);
 }
 
-/* ================================================= */
-/* TECH TAGS */
-/* ================================================= */
-
-.tech {
-  display: inline-block;
-  padding: 8px 16px;
-  margin: 6px;
-  border-radius: 20px;
-  background: rgba(147,51,234,0.2);
-  font-size: 14px;
+.tech-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 0 50px rgba(147,51,234,0.5);
 }
 
 /* ================================================= */
@@ -223,15 +269,6 @@ section h2 {
 
 .project-images img:hover {
   transform: scale(1.05);
-}
-
-.project-tech span {
-  display: inline-block;
-  padding: 6px 14px;
-  margin: 4px;
-  border-radius: 20px;
-  background: rgba(147,51,234,0.2);
-  font-size: 13px;
 }
 
 .btn {
@@ -278,18 +315,9 @@ section h2 {
   transition: 0.3s;
 }
 
-.contact-item i {
-  font-size: 20px;
-}
-
 .contact-item:hover {
   transform: translateX(6px);
   box-shadow: 0 0 25px rgba(147,51,234,0.4);
-}
-
-.qr-title {
-  text-align: center;
-  margin-bottom: 20px;
 }
 
 .qr-code {
@@ -298,35 +326,6 @@ section h2 {
   margin: auto;
   border-radius: 15px;
   box-shadow: 0 0 30px rgba(147,51,234,0.6);
-}
-
-/* ================================================= */
-/* IMAGE MODAL */
-/* ================================================= */
-
-.image-modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.95);
-  backdrop-filter: blur(8px);
-  z-index: 2000;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  max-width: 85vw;
-  max-height: 85vh;
-  border-radius: 12px;
-}
-
-.close-modal {
-  position: absolute;
-  top: 30px;
-  right: 40px;
-  font-size: 40px;
-  cursor: pointer;
 }
 
 /* ================================================= */
@@ -340,21 +339,13 @@ footer {
 }
 
 /* ================================================= */
-/* MOBILE OPTIMIZATION */
+/* RESPONSIVE */
 /* ================================================= */
 
 @media (max-width: 900px) {
 
-  .navbar {
-    padding: 15px 6%;
-  }
-
   .nav-links {
     display: none;
-  }
-
-  .hero {
-    padding: 140px 20px 70px;
   }
 
   .hero h1 {
@@ -374,8 +365,13 @@ footer {
     padding: 80px 20px;
   }
 
-  section h2 {
-    font-size: 28px;
+  .about-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    max-width: 320px;
   }
 
   .projects-grid {
@@ -395,161 +391,17 @@ footer {
     width: 200px;
   }
 
-}
-/* ========================= */
-/* TECH SECTION PRO */
-/* ========================= */
-
-.tech-section {
-  padding: 160px 8%;
-  position: relative;
-}
-
-.tech-header {
-  position: relative;
-  margin-bottom: 80px;
-  padding-left: 40px;
-}
-
-/* Línea violeta lateral */
-
-.tech-header::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 8px;
-  width: 6px;
-  height: 80px;
-  background: linear-gradient(to bottom, #7c3aed, #a855f7);
-  border-radius: 10px;
-}
-
-.tech-subtitle {
-  display: block;
-  font-size: 18px;
-  letter-spacing: 4px;
-  color: #a78bfa;
-  font-weight: 600;
-  margin-bottom: 15px;
-}
-
-.tech-header h2 {
-  font-size: 56px;
-  font-weight: 700;
-  line-height: 1.1;
-}
-
-/* Grid */
-
-.tech-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 40px;
-}
-
-/* Cards */
-
-.tech-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 55px 30px;
-  border-radius: 25px;
-  text-align: center;
-  transition: 0.4s ease;
-  backdrop-filter: blur(15px);
-}
-
-.tech-card i {
-  font-size: 50px;
-  margin-bottom: 25px;
-  color: #a78bfa;
-}
-
-.tech-card h3 {
-  font-size: 22px;
-  font-weight: 600;
-}
-
-.tech-card:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 0 50px rgba(147,51,234,0.5);
-}
-/* Responsive */
-
-@media (max-width: 900px) {
-  .about-container {
-    grid-template-columns: 1fr;
+  .tech-section h2 {
+    font-size: 34px;
   }
 }
-/* RESPONSIVE */
-
-@media (max-width: 900px) {
-
-  .about-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: center;
-  }
-
-  .about-image img {
-    margin: auto;
-  }
-
-  .about-highlights {
-    justify-content: center;
-  }
-
-}
-/* ========================= */
-/* TECH SECTION MODERNA */
-/* ========================= */
-
-.tech-section {
-  padding: 140px 8%;
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease;
 }
 
-.tech-header {
-  margin-bottom: 60px;
-}
-
-.tech-subtitle {
-  color: #a78bfa;
-  letter-spacing: 3px;
-  font-size: 14px;
-}
-
-.tech-header h2 {
-  font-size: 48px;
-  margin-top: 15px;
-}
-
-.tech-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 40px;
-}
-
-.tech-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 50px 30px;
-  border-radius: 25px;
-  text-align: center;
-  transition: 0.4s;
-  backdrop-filter: blur(15px);
-}
-
-.tech-card i {
-  font-size: 45px;
-  margin-bottom: 20px;
-  color: #a78bfa;
-}
-
-.tech-card h3 {
-  font-size: 20px;
-}
-
-.tech-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 0 40px rgba(147,51,234,0.4);
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
