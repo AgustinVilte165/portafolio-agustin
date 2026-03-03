@@ -96,8 +96,8 @@ body {
 }
 
 .profile-img {
-  width: 160px;
-  height: 160px;
+  width: 170px;
+  height: 170px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 25px;
@@ -120,6 +120,23 @@ body {
   font-size: 20px;
   color: #cbd5e1;
   margin-top: 10px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 22px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #7c3aed, #ff00cc);
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(147,51,234,0.6);
 }
 
 /* ================================================= */
@@ -169,6 +186,39 @@ section {
 .about-text p {
   margin-bottom: 16px;
   color: #cbd5e1;
+}
+
+/* CONTACT INFO PRO */
+
+.about-contact {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 15px;
+  color: #cbd5e1;
+}
+
+.contact-row i {
+  font-size: 18px;
+  color: #a78bfa;
+  width: 22px;
+}
+
+.contact-row a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.contact-row a:hover {
+  color: #c084fc;
 }
 
 /* ================================================= */
@@ -233,6 +283,7 @@ section {
 
 .project-card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 0 40px rgba(147,51,234,0.4);
 }
 
 .project-images {
@@ -246,61 +297,15 @@ section {
   width: 100%;
   border-radius: 12px;
   cursor: pointer;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 18px;
-  border-radius: 25px;
-  background: linear-gradient(90deg, #7c3aed, #ff00cc);
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-/* ================================================= */
-/* CONTACT */
-/* ================================================= */
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.contact-left {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.contact-item {
-  background: rgba(255,255,255,0.05);
-  padding: 18px;
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: white;
   transition: 0.3s;
 }
 
-.contact-item:hover {
-  transform: translateX(6px);
-}
-
-.qr-code {
-  width: 220px;
-  margin: auto;
-  display: block;
-  border-radius: 15px;
+.project-images img:hover {
+  transform: scale(1.03);
 }
 
 /* ================================================= */
-/* IMAGE MODAL */
+/* MODAL */
 /* ================================================= */
 
 .image-modal {
@@ -311,6 +316,10 @@ section {
   justify-content: center;
   align-items: center;
   z-index: 9999;
+}
+
+.image-modal.active {
+  display: flex;
 }
 
 .modal-content {
@@ -391,24 +400,4 @@ section {
   .project-images {
     grid-template-columns: 1fr;
   }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .qr-code {
-    width: 180px;
-  }
-}
-
-.image-modal.active {
-  display: flex;
-}
-.image-modal {
-  display: none;
-}
-
-.image-modal.active {
-  display: flex;
 }

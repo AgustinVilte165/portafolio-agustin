@@ -7,19 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agustín Vilte | Fullstack Developer</title>
 
-  <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="assets/icono.jpg">
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- FontAwesome -->
   <script src="https://kit.fontawesome.com/4ad0d2c2c3.js" crossorigin="anonymous"></script>
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- JS -->
   <script src="script.js" defer></script>
 </head>
 
@@ -51,16 +45,28 @@
 
 <header class="hero" id="hero">
   <div class="hero-content">
+
     <img src="assets/foto-agustin.jpg" alt="Agustín Vilte" class="profile-img">
+
     <p class="hero-label">FULLSTACK DEVELOPER</p>
     <h1>Agustín Vilte</h1>
     <h2 id="typed-text"></h2>
+
+    <div style="margin-top:25px;">
+      <a href="https://wa.me/5491132368577?text=Hola%20Agustin!%20Soy%20________%20y%20quiero%20contactarme%20con%20vos."
+         target="_blank"
+         class="btn">
+         Hire Me
+      </a>
+    </div>
+
   </div>
 </header>
 
 <!-- ================= ABOUT ================= -->
 
 <section id="about">
+
   <div class="about-wrapper">
 
     <div class="about-image">
@@ -68,6 +74,7 @@
     </div>
 
     <div class="about-text">
+
       <span class="section-label">SOBRE MÍ</span>
       <h2>Desarrollador Full-Stack enfocado en backend y arquitectura</h2>
 
@@ -77,18 +84,65 @@
       </p>
 
       <p>
-        He desarrollado plataformas e-commerce, paneles administrativos
-        y sistemas automatizados listos para integraciones con APIs externas.
+        Desarrollo plataformas e-commerce, paneles administrativos
+        y sistemas automatizados listos para producción.
       </p>
 
       <p>
-        Mi objetivo es crear soluciones profesionales orientadas a negocio,
-        aplicando buenas prácticas, arquitectura modular y seguridad en producción.
+        Mi objetivo es crear soluciones orientadas a negocio
+        aplicando buenas prácticas y arquitectura profesional.
       </p>
+
+      <!-- CONTACT INFO PRO -->
+
+      <div class="about-contact">
+
+        <div class="contact-row">
+          <i class="fas fa-phone"></i>
+          <span>+54 9 1132368577</span>
+        </div>
+
+        <div class="contact-row">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Argentina</span>
+        </div>
+
+        <div class="contact-row">
+          <i class="fas fa-globe"></i>
+          <a href="https://portafolio-agustin-three.vercel.app" target="_blank">
+            portafolio-agustin-three.vercel.app
+          </a>
+        </div>
+
+        <div class="contact-row">
+          <i class="fas fa-envelope"></i>
+          <span>agustin.nico252@gmail.com</span>
+        </div>
+
+      </div>
+
+      <!-- BADGES -->
+
+      <div style="margin-top:25px; display:flex; gap:15px;">
+
+        <a href="https://github.com/AgustinVilte165"
+           target="_blank"
+           class="btn">
+           <i class="fab fa-github"></i> GitHub
+        </a>
+
+        <a href="https://www.linkedin.com/in/agustin-vilte-04b89335a"
+           target="_blank"
+           class="btn">
+           <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+
+      </div>
 
     </div>
 
   </div>
+
 </section>
 
 <!-- ================= TECH ================= -->
@@ -96,17 +150,15 @@
 <section id="tech" class="tech-section">
 
   <span class="tech-big-label">TECNOLOGÍAS</span>
-  <h2>Mis herramientas y tecnologías</h2>
+  <h2>Stack principal</h2>
 
   <div class="tech-grid">
-
     <div class="tech-card">Node.js</div>
     <div class="tech-card">Express</div>
-    <div class="tech-card">JWT</div>
     <div class="tech-card">MongoDB</div>
+    <div class="tech-card">JWT</div>
     <div class="tech-card">JavaScript</div>
     <div class="tech-card">Git</div>
-
   </div>
 
 </section>
@@ -122,46 +174,34 @@
 
   <div class="projects-grid">
 
-    <!-- Proyecto 1 -->
     <div class="project-card">
-
       <div class="project-images">
-        <img src="assets/ecommerce.jpg" alt="Ecommerce 1">
-        <img src="assets/ecommerce1.jpg" alt="Ecommerce 2">
-        <img src="assets/ecommerce3.jpg" alt="Ecommerce 3">
-        <img src="assets/ecommerce4.jpg" alt="Ecommerce 4">
+        <img src="assets/ecommerce.jpg">
+        <img src="assets/ecommerce1.jpg">
+        <img src="assets/ecommerce3.jpg">
+        <img src="assets/ecommerce4.jpg">
       </div>
 
       <h3>Plataforma Ecommerce Fullstack</h3>
-      <p>
-        Sistema completo con autenticación, panel administrativo
-        y control de compras en tiempo real.
-      </p>
+      <p>Sistema completo con autenticación y panel administrativo.</p>
 
       <a class="btn"
          href="https://distribuidora-ecommerce.onrender.com"
          target="_blank">
         Ver Proyecto
       </a>
-
     </div>
 
-    <!-- Proyecto 2 -->
     <div class="project-card">
-
       <div class="project-images">
-        <img src="assets/panel-turnos.jpg" alt="Sistema 1">
-        <img src="assets/panel-turnos1.jpg" alt="Sistema 2">
+        <img src="assets/panel-turnos.jpg">
+        <img src="assets/panel-turnos1.jpg">
       </div>
 
       <h3>Sistema Automatizado de Validación</h3>
-      <p>
-        Backend preparado para integración con WhatsApp Business API
-        con validación automática y gestión de estados.
-      </p>
+      <p>Backend listo para integración con WhatsApp Business API.</p>
 
       <a class="btn">Proyecto Privado</a>
-
     </div>
 
   </div>
@@ -174,47 +214,17 @@
 
   <div style="text-align:center; margin-bottom:60px;">
     <span class="section-label">CONTACTO</span>
-    <h2>Conectemos</h2>
+    <h2>Trabajemos juntos</h2>
   </div>
 
-  <div class="contact-grid">
+  <div style="text-align:center;">
 
-    <div class="contact-left">
-
-      <a href="https://wa.me/5491132368577"
-         target="_blank"
-         class="contact-item">
-        <i class="fab fa-whatsapp"></i>
-        <span>WhatsApp</span>
-      </a>
-
-      <div class="contact-item">
-        <i class="fas fa-envelope"></i>
-        <span>agustin.nico252@gmail.com</span>
-      </div>
-
-      <a href="https://github.com/AgustinVilte165"
-         target="_blank"
-         class="contact-item">
-        <i class="fab fa-github"></i>
-        <span>GitHub</span>
-      </a>
-
-      <a href="https://www.linkedin.com/in/agustin-vilte-04b89335a"
-         target="_blank"
-         class="contact-item">
-        <i class="fab fa-linkedin"></i>
-        <span>LinkedIn</span>
-      </a>
-
-    </div>
-
-    <div class="contact-right">
-      <img 
-        src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://wa.me/5491132368577"
-        class="qr-code"
-        alt="QR WhatsApp">
-    </div>
+    <a href="https://wa.me/5491132368577?text=Hola%20Agustin!%20Soy%20________%20y%20quiero%20contactarme%20con%20vos."
+       target="_blank"
+       class="btn"
+       style="font-size:18px; padding:15px 30px;">
+       <i class="fab fa-whatsapp"></i> Enviar mensaje por WhatsApp
+    </a>
 
   </div>
 
@@ -224,7 +234,7 @@
 
 <div class="image-modal" id="imageModal">
   <span class="close-modal" id="closeModal">&times;</span>
-  <img class="modal-content" id="modalImage" alt="Vista previa proyecto">
+  <img class="modal-content" id="modalImage">
 </div>
 
 <footer>

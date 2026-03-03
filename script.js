@@ -1,5 +1,5 @@
 /* ================================================= */
-/* PORTFOLIO SCRIPT PRO VERSION */
+/* PORTFOLIO SCRIPT - FINAL PRO VERSION */
 /* ================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -41,14 +41,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-      setTimeout(typeEffect, deleting ? 40 : 70);
+      setTimeout(typeEffect, deleting ? 35 : 65);
     }
 
     typeEffect();
   }
 
   /* ================================================= */
-  /* SCROLL REVEAL (INTERSECTION OBSERVER) */
+  /* SCROLL REVEAL (OPTIMIZADO) */
   /* ================================================= */
 
   const revealElements = document.querySelectorAll("section, .project-card");
@@ -69,44 +69,50 @@ document.addEventListener("DOMContentLoaded", () => {
       el.classList.add("reveal-hidden");
       observer.observe(el);
     });
-
   }
 
   /* ================================================= */
-  /* NAV LINK ACTIVO SEGÚN SCROLL */
+  /* NAVBAR SHRINK + ACTIVE LINK */
   /* ================================================= */
 
+  const navbar = document.querySelector(".navbar");
   const navLinks = document.querySelectorAll(".nav-links a");
   const sections = document.querySelectorAll("section");
 
-  if (navLinks.length && sections.length) {
+  window.addEventListener("scroll", () => {
 
-    window.addEventListener("scroll", () => {
+    /* Shrink Navbar */
+    if (window.scrollY > 60) {
+      navbar.style.padding = "12px 8%";
+      navbar.style.background = "rgba(5,5,15,0.9)";
+    } else {
+      navbar.style.padding = "18px 8%";
+      navbar.style.background = "rgba(5,5,15,0.75)";
+    }
 
-      let current = "";
+    /* Active link */
+    let current = "";
 
-      sections.forEach(section => {
-        const top = section.offsetTop - 200;
-        const height = section.offsetHeight;
+    sections.forEach(section => {
+      const top = section.offsetTop - 200;
+      const height = section.offsetHeight;
 
-        if (window.scrollY >= top && window.scrollY < top + height) {
-          current = section.getAttribute("id");
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-          link.classList.add("active");
-        }
-      });
-
+      if (window.scrollY >= top && window.scrollY < top + height) {
+        current = section.getAttribute("id");
+      }
     });
 
-  }
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+
+  });
 
   /* ================================================= */
-  /* IMAGE MODAL FIX DEFINITIVO */
+  /* IMAGE MODAL PRO FIXED */
   /* ================================================= */
 
   const modal = document.getElementById("imageModal");
@@ -116,33 +122,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (modal && modalImg && closeModal && projectImages.length > 0) {
 
+    function openModal(src) {
+      modal.classList.add("active");
+      modalImg.src = src;
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModalFunc() {
+      modal.classList.remove("active");
+      modalImg.src = "";
+      document.body.style.overflow = "auto";
+    }
+
     projectImages.forEach(img => {
       img.addEventListener("click", () => {
-        modal.classList.add("active");
-        modalImg.src = img.src;
-        document.body.style.overflow = "hidden";
+        openModal(img.src);
       });
     });
 
-    closeModal.addEventListener("click", () => {
-      modal.classList.remove("active");
-      document.body.style.overflow = "auto";
-    });
+    closeModal.addEventListener("click", closeModalFunc);
 
     modal.addEventListener("click", (e) => {
       if (e.target === modal) {
-        modal.classList.remove("active");
-        document.body.style.overflow = "auto";
+        closeModalFunc();
       }
     });
 
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
-        modal.classList.remove("active");
-        document.body.style.overflow = "auto";
+        closeModalFunc();
       }
     });
-
   }
 
 });
