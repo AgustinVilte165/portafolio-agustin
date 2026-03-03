@@ -401,3 +401,14 @@ section {
     width: 180px;
   }
 }
+
+.image-modal.active {
+  display: flex;
+}
+.image-modal {
+  display: none;
+}
+
+.image-modal.active {
+  display: flex;
+}
