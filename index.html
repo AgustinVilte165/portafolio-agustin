@@ -10,16 +10,16 @@
   <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="assets/icono.jpg">
 
-  <!-- Fonts -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Icons -->
+  <!-- FontAwesome -->
   <script src="https://kit.fontawesome.com/4ad0d2c2c3.js" crossorigin="anonymous"></script>
 
-  <!-- Styles -->
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Script -->
+  <!-- JS -->
   <script src="script.js" defer></script>
 </head>
 
@@ -50,38 +50,35 @@
 <!-- ================= HERO ================= -->
 
 <header class="hero" id="hero">
-
   <div class="hero-content">
     <img src="assets/foto-agustin.jpg" alt="Agustín Vilte" class="profile-img">
     <p class="hero-label">FULLSTACK DEVELOPER</p>
     <h1>Agustín Vilte</h1>
     <h2 id="typed-text"></h2>
   </div>
-
 </header>
 
 <!-- ================= ABOUT ================= -->
 
-<section id="about" class="about-section">
-
+<section id="about">
   <div class="about-wrapper">
 
     <div class="about-image">
-      <img src="assets/fotosobremi.jpg" alt="Agustín Vilte">
+      <img src="assets/fotosobremi.jpg" alt="Foto sobre mí">
     </div>
 
     <div class="about-text">
       <span class="section-label">SOBRE MÍ</span>
-      <h2>Full-Stack Developer enfocado en backend y arquitectura</h2>
+      <h2>Desarrollador Full-Stack enfocado en backend y arquitectura</h2>
 
       <p>
-        Soy desarrollador Full-Stack especializado en Node.js y MongoDB.
-        Me enfoco en construir sistemas reales, seguros y escalables.
+        Soy desarrollador Full-Stack especializado en Node.js y MongoDB,
+        enfocado en construir sistemas reales, seguros y escalables.
       </p>
 
       <p>
         He desarrollado plataformas e-commerce, paneles administrativos
-        y sistemas automatizados preparados para integración con APIs externas.
+        y sistemas automatizados listos para integraciones con APIs externas.
       </p>
 
       <p>
@@ -92,7 +89,6 @@
     </div>
 
   </div>
-
 </section>
 
 <!-- ================= TECH ================= -->
@@ -119,11 +115,14 @@
 
 <section id="project">
 
-  <h2 style="text-align:center; margin-bottom:60px;">Proyectos</h2>
+  <div style="text-align:center; margin-bottom:60px;">
+    <span class="section-label">PROYECTOS</span>
+    <h2>Proyectos destacados</h2>
+  </div>
 
   <div class="projects-grid">
 
-    <!-- Ecommerce -->
+    <!-- Proyecto 1 -->
     <div class="project-card">
 
       <div class="project-images">
@@ -134,28 +133,34 @@
       </div>
 
       <h3>Plataforma Ecommerce Fullstack</h3>
-      <p>Sistema completo con autenticación, panel administrativo y control de compras en tiempo real.</p>
+      <p>
+        Sistema completo con autenticación, panel administrativo
+        y control de compras en tiempo real.
+      </p>
 
-      <a class="btn" href="https://distribuidora-ecommerce.onrender.com" target="_blank">
+      <a class="btn"
+         href="https://distribuidora-ecommerce.onrender.com"
+         target="_blank">
         Ver Proyecto
       </a>
 
     </div>
 
-    <!-- Bot -->
+    <!-- Proyecto 2 -->
     <div class="project-card">
 
       <div class="project-images">
-        <img src="assets/panel-turnos.jpg" alt="Panel 1">
-        <img src="assets/panel-turnos1.jpg" alt="Panel 2">
+        <img src="assets/panel-turnos.jpg" alt="Sistema 1">
+        <img src="assets/panel-turnos1.jpg" alt="Sistema 2">
       </div>
 
       <h3>Sistema Automatizado de Validación</h3>
-      <p>Backend preparado para integración con WhatsApp Business API con validación y gestión de estados.</p>
+      <p>
+        Backend preparado para integración con WhatsApp Business API
+        con validación automática y gestión de estados.
+      </p>
 
-      <a class="btn">
-        Proyecto Privado
-      </a>
+      <a class="btn">Proyecto Privado</a>
 
     </div>
 
@@ -167,13 +172,16 @@
 
 <section id="contact">
 
-  <h2 style="text-align:center; margin-bottom:60px;">Conectemos</h2>
+  <div style="text-align:center; margin-bottom:60px;">
+    <span class="section-label">CONTACTO</span>
+    <h2>Conectemos</h2>
+  </div>
 
   <div class="contact-grid">
 
     <div class="contact-left">
 
-      <a href="https://wa.me/5491132368577?text=Hola%20Agustin!%20Quiero%20contactarme%20con%20vos."
+      <a href="https://wa.me/5491132368577"
          target="_blank"
          class="contact-item">
         <i class="fab fa-whatsapp"></i>
@@ -202,16 +210,10 @@
     </div>
 
     <div class="contact-right">
-
-      <p class="qr-title">
-        Escaneame si querés contactarme
-      </p>
-
       <img 
-      src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://wa.me/5491132368577"
-      class="qr-code"
-      alt="QR WhatsApp">
-
+        src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://wa.me/5491132368577"
+        class="qr-code"
+        alt="QR WhatsApp">
     </div>
 
   </div>
@@ -222,7 +224,7 @@
 
 <div class="image-modal" id="imageModal">
   <span class="close-modal" id="closeModal">&times;</span>
-  <img class="modal-content" id="modalImage">
+  <img class="modal-content" id="modalImage" alt="Vista previa proyecto">
 </div>
 
 <footer>

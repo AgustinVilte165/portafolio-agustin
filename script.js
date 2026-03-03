@@ -1,5 +1,5 @@
 /* ================================================= */
-/* PORTFOLIO MASTER SCRIPT - AGUSTÍN VILTE */
+/* PORTFOLIO SCRIPT CLEAN VERSION */
 /* ================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -22,145 +22,99 @@ document.addEventListener("DOMContentLoaded", () => {
     let charIndex = 0;
     let deleting = false;
 
-    function typeEffect() {
-      const current = texts[textIndex];
+    function type() {
+
+      const currentText = texts[textIndex];
 
       if (!deleting) {
-        typedElement.textContent = current.slice(0, charIndex++);
-        if (charIndex > current.length) {
+        typedElement.textContent = currentText.substring(0, charIndex++);
+        if (charIndex > currentText.length) {
           deleting = true;
-          setTimeout(typeEffect, 1200);
+          setTimeout(type, 1200);
           return;
         }
       } else {
-        typedElement.textContent = current.slice(0, charIndex--);
+        typedElement.textContent = currentText.substring(0, charIndex--);
         if (charIndex === 0) {
           deleting = false;
           textIndex = (textIndex + 1) % texts.length;
         }
       }
 
-      setTimeout(typeEffect, deleting ? 35 : 60);
+      setTimeout(type, deleting ? 40 : 70);
     }
 
-    typeEffect();
+    type();
   }
 
   /* ================================================= */
-  /* SCROLL REVEAL (OPTIMIZADO) */
+  /* SCROLL REVEAL (SUAVE Y ESTABLE) */
   /* ================================================= */
 
   const revealElements = document.querySelectorAll("section, .project-card");
 
-  if ("IntersectionObserver" in window) {
-
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("reveal-visible");
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-
-    revealElements.forEach(el => {
-      el.classList.add("reveal-hidden");
-      observer.observe(el);
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("reveal-visible");
+        entry.target.classList.remove("reveal-hidden");
+      }
     });
-  }
+  }, { threshold: 0.15 });
 
-  /* ================================================= */
-  /* NAVBAR SCROLL EFFECT */
-  /* ================================================= */
-
-  const navbar = document.querySelector(".navbar");
-
-  window.addEventListener("scroll", () => {
-    if (navbar) {
-      navbar.classList.toggle("navbar-scrolled", window.scrollY > 50);
-    }
+  revealElements.forEach(el => {
+    el.classList.add("reveal-hidden");
+    observer.observe(el);
   });
 
   /* ================================================= */
-  /* ACTIVE NAV LINK (MEJORADO) */
+  /* NAV LINK ACTIVO SEGÚN SCROLL */
   /* ================================================= */
 
-  const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".nav-links a");
+  const sections = document.querySelectorAll("section");
 
-  function setActiveLink() {
-    let current = "";
+  window.addEventListener("scroll", () => {
+
+    let currentSection = "";
 
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
+      const sectionTop = section.offsetTop - 150;
       if (window.scrollY >= sectionTop) {
-        current = section.id;
+        currentSection = section.getAttribute("id");
       }
     });
 
     navLinks.forEach(link => {
       link.classList.remove("active");
-      if (link.getAttribute("href") === `#${current}`) {
+      if (link.getAttribute("href") === "#" + currentSection) {
         link.classList.add("active");
       }
-    });
-  }
-
-  window.addEventListener("scroll", setActiveLink);
-
-  /* ================================================= */
-  /* 3D HOVER PROJECT CARDS */
-  /* ================================================= */
-
-  const projectCards = document.querySelectorAll(".project-card");
-
-  projectCards.forEach(card => {
-
-    card.addEventListener("mousemove", (e) => {
-
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-
-      const rotateX = ((y - centerY) / centerY) * -6;
-      const rotateY = ((x - centerX) / centerX) * 6;
-
-      card.style.transform =
-        `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
-    });
-
-    card.addEventListener("mouseleave", () => {
-      card.style.transform = "rotateX(0) rotateY(0) translateY(0)";
     });
 
   });
 
   /* ================================================= */
-  /* IMAGE MODAL */
+  /* IMAGE MODAL FUNCIONAL */
   /* ================================================= */
 
   const modal = document.getElementById("imageModal");
   const modalImg = document.getElementById("modalImage");
   const closeModal = document.getElementById("closeModal");
-  const images = document.querySelectorAll(".project-images img");
+  const projectImages = document.querySelectorAll(".project-images img");
 
-  if (modal && modalImg && images.length > 0) {
+  if (modal && modalImg && projectImages.length > 0) {
 
-    images.forEach(img => {
+    projectImages.forEach(img => {
       img.addEventListener("click", () => {
         modal.style.display = "flex";
         modalImg.src = img.src;
       });
     });
 
-    if (closeModal) {
-      closeModal.addEventListener("click", () => {
-        modal.style.display = "none";
-      });
-    }
+    closeModal.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
 
     modal.addEventListener("click", (e) => {
       if (e.target === modal) {
@@ -173,6 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.style.display = "none";
       }
     });
+
   }
 
 });
